@@ -21,9 +21,9 @@ import com.sun.mail.imap.IMAPFolder;
 import com.sun.mail.imap.IMAPStore;
 
 /**
- * 使用imap协议获取未读邮件数
+ * 使用imap协议获取邮件
  * 
- * @author w
+ * @author 梁擎宇
  * 
  */
 public class ImapEmail {
@@ -65,13 +65,6 @@ public class ImapEmail {
 				System.out.println("发送时间：" + message.getSentDate());
 				System.out.println("主题：" + message.getSubject());
 				System.out.println("内容：" + message.getContent());
-				//获取所有的Header，头信息
-				//Enumeration headers = message.getAllHeaders();
-				//System.out.println("----------------------allHeaders-----------------------------");
-			/*	while (headers.hasMoreElements()) {
-					Header header = (Header)headers.nextElement();
-					System.out.println(header.getName()+" ======= "+header.getValue());
-				}*/
 				
 				//解析邮件内容
 				Object content = message.getContent();
@@ -89,8 +82,6 @@ public class ImapEmail {
 			//每封邮件都有一个MessageNumber，可以通过邮件的MessageNumber在收件箱里面取得该邮件
 			//messageNumber = message.getMessageNumber();
 		}
-		//Message message = folder.getMessage(messageNumber);
-		//System.out.println(message.getContent()+message.getContentType());
 		// 释放资源
 		if (folder != null)
 			folder.close(true); 
